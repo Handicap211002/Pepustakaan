@@ -214,7 +214,6 @@
   justify-items: center;
   padding: 60px;
   padding-top: 1549px;
-  /* tambahan ini */
 }
 
 .book-card {
@@ -229,6 +228,7 @@
   font-family: "Poppins", sans-serif;
   overflow: hidden;
   transition: transform 0.2s;
+  position: relative;
 }
 
 .book-card:hover {
@@ -247,6 +247,15 @@
   margin-top: 20px;
   font-size: 20px;
   font-weight: 500;
+}
+
+.bookmark {
+  width: 64px !important;
+  height: 64px !important;
+  position: absolute;
+  left: 185px;
+  top: 260px;
+  overflow: visible;
 }
 
 .group-4 {
@@ -431,3 +440,16 @@
 .footer-bottom span {
   font-weight: 700;
 }
+
+/*user akun*/
+
+.logoakun {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  object-fit: cover;
+  left: 1220px;
+  top: 55px;
+}
+
