@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="search-container">
-            <div class="rectangle-1" contenteditable="true" id="searchBox"></div>
+            <input type="text" id="searchBox" class="rectangle-1">
             <img class="search" src="svg/search0.svg" id="searchIcon" />
             <div class="telusuri" id="placeholderText">Telusuri...</div>
         </div>
@@ -183,25 +183,30 @@
         </footer>
 
         <script>
-            const searchBox = document.getElementById("searchBox");
+            const filterBox = document.getElementById("searchBox");
+            const items = document.querySelectorAll(".book-card");
+
+            filterBox.addEventListener("input", function() {
+                const search = this.value.toLowerCase(); // ganti innerText ke value
+
+                items.forEach(item => {
+                    const title = item.querySelector(".book-title").innerText.toLowerCase();
+                    if (title.includes(search) || search === "") {
+                        item.style.display = "";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+        </script>
+
+        <script>
             const placeholderText = document.getElementById("placeholderText");
             const searchIcon = document.getElementById("searchIcon");
 
             searchBox.addEventListener("input", function() {
-                const hasText = searchBox.innerText.trim().length > 0;
+                const hasText = searchBox.value.trim().length > 0;
                 placeholderText.classList.toggle("hidden", hasText);
-                searchIcon.classList.toggle("hidden", hasText);
-            });
-
-            searchBox.addEventListener("keydown", function(event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    const keyword = searchBox.innerText.trim();
-                    if (keyword) {
-                        // Redirect ke login.php dengan query string kategori
-                        window.location.href = `#?category=${encodeURIComponent(keyword)}`;
-                    }
-                }
             });
         </script>
 </body>
