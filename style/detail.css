@@ -1,0 +1,298 @@
+.beranda,
+.beranda * {
+  box-sizing: border-box;
+}
+
+.beranda {
+  background: #ffffff;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: #162589;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 110px;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-items {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  font-weight: 600;
+}
+
+.nav-link.active {
+  font-weight: 700;
+  border-bottom: 2px solid white;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/*user akun*/
+
+.logoakun {
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  object-fit: cover;
+  left: 1435px;
+  top: 12px;
+}
+
+
+
+.footer {
+  width: 100%;
+  background: #00207d;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  padding: 50px 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo-footer {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.line {
+  position: absolute;
+  top: 130px;
+  left: 60px;
+  width: calc(100% - 120px);
+  border-top: 1px solid #fff;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  margin-top: 130px;
+}
+
+.footer-section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-section p,
+.footer-section li {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.footer-section.usefull-links {
+  margin-left: 230px;
+}
+
+.footer-section.hubungi-kami {
+  margin-left: 5px;
+}
+
+.footer-section ul {
+  padding: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.footer-bottom {
+  background: #1c9a2f;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.footer-bottom span {
+  font-weight: 700;
+}
+
+
+.book-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.book-card {
+    background-color: #00207d;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 690px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cover-img {
+    width: 130px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.book-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.author {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.book-meta {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 15px;
+    padding: 0.6rem 1rem;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.book-meta > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-section {
+    margin-top: -1.5rem;
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detail-section h3 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #1d2976;
+    margin-bottom: 0.5rem;
+}
+
+.detail-section p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.button-group {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    justify-content: center; /* Menambahkan properti ini untuk memusatkan */
+}
+
+
+.btn-baca, .btn-pinjam {
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    background-color: #1d2976;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-baca:hover, .btn-pinjam:hover {
+    background-color: #3949ab;
+}
+
+.review {
+    margin-top: 2rem;
+}
+
+.review-user {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: #f6f6f6;
+    padding: 1rem;
+    border-radius: 15px;
+    align-items: flex-start;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-content .username {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.review-content .comment {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+.rating-date {
+    font-size: 0.85rem;
+    color: #777;
+}

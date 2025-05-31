@@ -37,7 +37,7 @@
       padding: 0;
     }
   </style>
-  <title>Document</title>
+  <title>Beranda</title>
 </head>
 
 <body>

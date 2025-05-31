@@ -1,3 +1,32 @@
+<?php
+session_start();
+include 'connetdb.php';
+
+// Cek apakah session username ada
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit;
+}
+
+// Cek apakah akun masih ada di database
+$username = $_SESSION['username'];
+$query = "SELECT * FROM akun WHERE NamaPengguna = '$username'";
+$result = mysqli_query($koneksi, $query);
+
+if (mysqli_num_rows($result) !== 1) {
+    // Kalau akun udah gak ada di database
+    session_unset(); // hapus semua session
+    session_destroy(); // matikan session
+    header('Location: login.php?error=Akun sudah dihapus.');
+    exit;
+}
+
+// Pesan sukses
+if (isset($_SESSION['success_message'])) {
+    echo "<script>alert('" . addslashes($_SESSION['success_message']) . "');</script>";
+    unset($_SESSION['success_message']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +66,7 @@
             padding: 0;
         }
     </style>
-    <title>Document</title>
+    <title>Koleksi Bacaan</title>
 </head>
 
 <body>
@@ -46,8 +75,8 @@
             <div class="nav-items">
                 <a href='berandasetelahlogin.php' class="nav-link">Beranda</a>
                 <a href="#" class="nav-link active">Koleksi Bacaan</a>
-                <a href="#" class="nav-link">Berita Terkini</a>
-                <a href="#" class="nav-link">Manajemen Buku</a>
+                <a href="beritaterkini.php" class="nav-link">Berita Terkini</a>
+                <a href="manajemenbuku.php" class="nav-link">Manajemen Buku</a>
             </div>
             <div class="nav-profile">
                 <img class="logoakun" src="svg/profil.svg" alt="Logoakun" onclick="window.location.href='userakun.php'" />
@@ -60,14 +89,14 @@
         </div>
 
         <div class="book-grid">
-            <a href="detail/timun-jelita.html" class="book-card">
-                <img src="img/image0.png" alt="Timun Jelita">
-                <p class="book-title">Timun Jelita</p>
+            <a href="detail/a.php" class="book-card">
+                <img src="img/b1.png" alt="Timun Jelita">
+                <p class="book-title">Hidden-City</p>
                 <img class="bookmark" src="svg/bookmark.svg" />
             </a>
-            <a href="detail/3726-mdpl.html" class="book-card">
-                <img src="img/image1.png" alt="3726 Mdpl">
-                <p class="book-title">3726 Mdpl</p>
+            <a href="detail/b.php" class="book-card">
+                <img src="img/b2.png" alt="3726 Mdpl">
+                <p class="book-title">Frequency-and-Music</p>
                 <img class="bookmark" src="svg/bookmark.svg" />
             </a>
             <a href="detail/ayah-arahnya.html" class="book-card">
